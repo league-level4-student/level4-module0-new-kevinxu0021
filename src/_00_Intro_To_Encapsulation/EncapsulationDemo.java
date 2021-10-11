@@ -15,7 +15,7 @@ public class EncapsulationDemo {
      */
 
     public static void main(String[] args) {
-
+Car car = new Car(0, 0, "red", 0);
     }
 
 }
@@ -114,7 +114,7 @@ class Car {
 
     // Below is an example of a helper method.
 
-    private boolean fuelInTank() {
+	private boolean fuelInTank() {
 
         return fuelInTank > 0;
 
