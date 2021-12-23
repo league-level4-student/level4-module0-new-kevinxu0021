@@ -10,7 +10,9 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.Random;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
@@ -119,7 +121,8 @@ public class SnakeGame implements ActionListener, KeyListener {
 		 * Create a new Location object that is set to a random location between 0 and
 		 * the WIDTH and HEIGHT variables.
 		 */
-
+		Random random = new Random();
+		Location location = new Location(random.nextInt(WIDTH), random.nextInt(HEIGHT));
 		/*
 		 * Set the foodLocation member variable equal to the Location object you just
 		 * created.
@@ -127,22 +130,31 @@ public class SnakeGame implements ActionListener, KeyListener {
 		 * Use the Snake class's isLocationOnSnake method to make sure you don't put the
 		 * food on top of the snake.
 		 */
+		foodLocation = location;
+		boolean run = true;
+		while (run == true) {
+			if (snake.isLocationOnSnake(location)) {
+				location = new Location(random.nextInt(WIDTH), random.nextInt(HEIGHT));
+			} else {
+				run = false;
+			}
+		}
 
 	}
 
 	private void gameOver() {
 
 		// Stop the timer member variable.
-
+		timer.stop();
 		// Tell the user their snake is dead.
-
-		// Ask the user if they want to play again.
-
+		JOptionPane.showMessageDialog(null, "GAME OVER");
 		/*
 		 * If the user wants to play again, call the Snake class's resetLocation method
 		 * and this class's setFoodLocation method then restart the timer. Otherwise,
 		 * exit the game.
 		 */
+		int result = JOptionPane.showConfirmDialog(window, "Do you want to play again?", "Game Over",
+				JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
 	}
 
