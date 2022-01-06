@@ -155,6 +155,13 @@ public class SnakeGame implements ActionListener, KeyListener {
 		 */
 		int result = JOptionPane.showConfirmDialog(window, "Do you want to play again?", "Game Over",
 				JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+		if (result == JOptionPane.YES_OPTION) {
+			snake.resetLocation();
+			setFoodLocation();
+			timer.restart();
+		} else {
+			System.exit(0);
+		}
 
 	}
 
@@ -166,17 +173,25 @@ public class SnakeGame implements ActionListener, KeyListener {
 	public void actionPerformed(ActionEvent e) {
 
 		// Call the Snake class's update method.
+		snake.update();
 
 		/*
 		 * If the snake is colliding with its own body or if the snake moves outside the
 		 * bounds of the frame call the gameOver method.
 		 */
-
+		if (snake.isHeadCollidingWithBody() == true) {
+			gameOver();
+		} else if (snake.isOutOfBounds()) {
+			gameOver();
+		}
 		/*
 		 * If the location of the snake's head is equal to the location of the food,
 		 * feed the snake and set the food location.
 		 */
-
+		if (snake.getHeadLocation().equals(foodLocation)) {
+			snake.feed();
+			setFoodLocation();
+		}
 		panel.repaint();
 	}
 }
