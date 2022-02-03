@@ -94,9 +94,7 @@ public class SnakeGame implements ActionListener, KeyListener {
 	}
 
 	@Override
-	public void keyPressed(KeyEvent e) {
-		System.out.println(e.getKeyCode());
-		/*
+	public void keyPressed(KeyEvent e) {		/*
 		 * Use a switch statement on e.getKeyCode() to determine which key was pressed.
 		 * Hint: Remember int KeyCode constants take a form matching KeyEvent.VK_UP.
 		 * 

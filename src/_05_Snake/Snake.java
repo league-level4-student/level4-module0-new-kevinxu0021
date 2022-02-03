@@ -39,15 +39,12 @@ public class Snake {
 
 		int nextX = head.getLocation().getX();
 		int nextY = head.getLocation().getY();
-		System.out.println(currentDirection);
 		switch (currentDirection) {
 		case RIGHT: {
-			System.out.println("1");
 			nextX++;
 			break;
 		}
 		case LEFT: {
-			System.out.println("2");
 			nextX--;
 			break;
 		}
@@ -69,9 +66,11 @@ public class Snake {
 		 * Use a loop starting at the end of the ArrayList and stop before the head of
 		 * the snake (index 0) or you will go out of bounds.
 		 */
-		for (int i = snake.size() - 1; i >= 0; i--) {
-			snake.get(i).setLocation(snake.get(i--).getLocation());
-		}
+		System.out.println(snake.size());
+			for (int i = snake.size()-1; i > 0; i--) {
+				snake.get(i).setLocation(snake.get(i--).getLocation());
+			}
+	
 		/*
 		 * Create a new Location object and initialize it with the values calculated in
 		 * step 1. Then set the head's location equal to the new location.
@@ -80,7 +79,6 @@ public class Snake {
 		head.setLocation(location);
 		// Set the canMove member variable to true.
 		canMove = true;
-		System.out.println(nextX + "a");
 	}
 
 	public void setDirection(Direction direction) {
@@ -92,13 +90,12 @@ public class Snake {
 		 * 
 		 * Hint: Use the isOppositeDirection method to check if Direction d is opposite.
 		 */
-		
+
 		if (!isOppositeDirection(direction) && canMove) {
-			System.out.println("true");
 			canMove = false;
 			currentDirection = direction;
 		}
-		
+
 	}
 
 	private boolean isOppositeDirection(Direction direction) {
@@ -112,19 +109,14 @@ public class Snake {
 		 */
 
 		if (currentDirection == Direction.UP && direction == Direction.DOWN) {
-			System.out.println("a");
 			return true;
 		} else if (currentDirection.equals(Direction.DOWN) && direction.equals(Direction.UP)) {
-			System.out.println("b");
 			return true;
 		} else if (currentDirection.equals(Direction.LEFT) && direction.equals(Direction.RIGHT)) {
-			System.out.println("c");
 			return true;
 		} else if (currentDirection.equals(Direction.RIGHT) && direction.equals(Direction.LEFT)) {
-			System.out.println("d");
 			return true;
 		} else {
-			System.out.println("e");
 			return false;
 
 		}
@@ -174,6 +166,7 @@ public class Snake {
 		 */
 		for (int i = 1; i < snake.size(); i++) {
 			if (head.getLocation() == snake.get(i).getLocation()) {
+				System.out.println("colliding");
 				return true;
 			} else {
 				return false;
