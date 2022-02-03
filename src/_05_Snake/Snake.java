@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 public class Snake {
 	public static final Color SNAKE_COLOR = Color.BLUE;
 	public static final int BODY_SIZE = 50;
@@ -24,6 +26,10 @@ public class Snake {
 
 	public void feed() {
 		snake.add(new SnakeSegment(snake.get(0).getLocation(), BODY_SIZE));
+		for (SnakeSegment s : snake) {
+			System.out.println(s.getLocation());
+		}
+		JOptionPane.showMessageDialog(null, "");
 	}
 
 	public Location getHeadLocation() {
@@ -67,10 +73,10 @@ public class Snake {
 		 * the snake (index 0) or you will go out of bounds.
 		 */
 		System.out.println(snake.size());
-			for (int i = snake.size()-1; i > 0; i--) {
-				snake.get(i).setLocation(snake.get(i--).getLocation());
-			}
-	
+		for (int i = snake.size() - 1; i > 0; i--) {
+			snake.get(i).setLocation(snake.get(i--).getLocation());
+		}
+
 		/*
 		 * Create a new Location object and initialize it with the values calculated in
 		 * step 1. Then set the head's location equal to the new location.
@@ -110,16 +116,15 @@ public class Snake {
 
 		if (currentDirection == Direction.UP && direction == Direction.DOWN) {
 			return true;
-		} else if (currentDirection.equals(Direction.DOWN) && direction.equals(Direction.UP)) {
+		} else if (currentDirection == Direction.DOWN && direction == Direction.UP) {
 			return true;
-		} else if (currentDirection.equals(Direction.LEFT) && direction.equals(Direction.RIGHT)) {
+		} else if (currentDirection == Direction.LEFT && direction == Direction.RIGHT) {
 			return true;
-		} else if (currentDirection.equals(Direction.RIGHT) && direction.equals(Direction.LEFT)) {
+		} else if (currentDirection == Direction.RIGHT && direction == Direction.LEFT) {
 			return true;
-		} else {
-			return false;
-
 		}
+		return false;
+
 	}
 
 	public void resetLocation() {
@@ -152,9 +157,8 @@ public class Snake {
 
 		} else if (head.getLocation().getY() > SnakeGame.HEIGHT || head.getLocation().getY() < 0) {
 			return true;
-		} else {
-			return false;
 		}
+		return false;
 
 	}
 
@@ -165,11 +169,9 @@ public class Snake {
 		 * location as any other body segment.
 		 */
 		for (int i = 1; i < snake.size(); i++) {
-			if (head.getLocation() == snake.get(i).getLocation()) {
+			if (head.getLocation().equals(snake.get(i).getLocation())) {
 				System.out.println("colliding");
 				return true;
-			} else {
-				return false;
 			}
 		}
 		return false;
@@ -182,7 +184,7 @@ public class Snake {
 		 * on the snake.
 		 */
 		for (int i = 0; i < snake.size(); i++) {
-			if (snake.get(i).getLocation() == loc) {
+			if (snake.get(i).getLocation().equals(loc)) {
 				return true;
 			}
 		}

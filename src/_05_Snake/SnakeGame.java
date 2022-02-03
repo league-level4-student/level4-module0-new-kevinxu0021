@@ -186,7 +186,7 @@ public class SnakeGame implements ActionListener, KeyListener {
 		 * If the snake is colliding with its own body or if the snake moves outside the
 		 * bounds of the frame call the gameOver method.
 		 */
-		if (snake.isHeadCollidingWithBody() == true) {
+		if (snake.isHeadCollidingWithBody()) {
 			gameOver();
 		} else if (snake.isOutOfBounds()) {
 			gameOver();

@@ -31,5 +31,10 @@ public class Location {
 	public int getY() {
 		return this.y;
 	}
+	
+	public String toString() {
+		String Return = "x=" + x + ", y=" + y;
+		return(Return);
+	}
 
 }
