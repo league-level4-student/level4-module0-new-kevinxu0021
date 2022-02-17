@@ -94,12 +94,13 @@ public class SnakeGame implements ActionListener, KeyListener {
 	}
 
 	@Override
-	public void keyPressed(KeyEvent e) {		/*
-		 * Use a switch statement on e.getKeyCode() to determine which key was pressed.
-		 * Hint: Remember int KeyCode constants take a form matching KeyEvent.VK_UP.
-		 * 
-		 * If an arrow key is pressed, set the snake's direction accordingly.
-		 */
+	public void keyPressed(
+			KeyEvent e) { /*
+							 * Use a switch statement on e.getKeyCode() to determine which key was pressed.
+							 * Hint: Remember int KeyCode constants take a form matching KeyEvent.VK_UP.
+							 * 
+							 * If an arrow key is pressed, set the snake's direction accordingly.
+							 */
 		switch (e.getKeyCode()) {
 		case KeyEvent.VK_UP: {
 			snake.setDirection(Direction.UP);
