@@ -39,13 +39,13 @@ public class EnumDemo {
          * "new" keyword to be initialized.
          */
 
-        private Planets(int daysToOrbitSun) {
-            this.daysToOrbitSun = daysToOrbitSun;
-        }
+		private Planets(int daysToOrbitSun) {
+			this.daysToOrbitSun = daysToOrbitSun;
+		}
 
-        public int getDaysToOrbitSun() {
-            return this.daysToOrbitSun;
-        }
+		public int getDaysToOrbitSun() {
+			return this.daysToOrbitSun;
+		}
 
     }
 
