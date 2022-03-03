@@ -1,6 +1,7 @@
 package _06_Card_Game;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class CardDealer {
 
@@ -13,6 +14,10 @@ public class CardDealer {
 				deck.add(card);
 			}
 		}
+	}
+
+	public void shuffle() {
+		Collections.shuffle(deck);
 	}
 
 }
