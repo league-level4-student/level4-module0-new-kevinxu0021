@@ -22,7 +22,7 @@ public class Blackjack {
 	}
 
 	void run() {
-		frame.addMouseListener(panel);
+		frame.addKeyListener(panel);
 		frame.add(panel);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
