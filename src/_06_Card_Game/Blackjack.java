@@ -29,5 +29,6 @@ public class Blackjack {
 		frame.getContentPane().setPreferredSize(new Dimension(width, height));
 		frame.setResizable(false);
 		frame.pack();
+		panel.startGame();
 	}
 }
