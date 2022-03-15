@@ -18,19 +18,28 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	final int MENU_STATE = 0;
 	final int GAME_STATE = 1;
 	int currentState = MENU_STATE;
-	Player player = new Player();
-	ObjectManager objectManager = new ObjectManager(player);
+	int cardInDeck = 0;
+	CardDealer cardDealer = new CardDealer();
+	Player player = new Player(cardDealer.deck);
+	Dealer dealer = new Dealer(cardDealer.deck);
+	ObjectManager objectManager = new ObjectManager(player, dealer);
 
 	GamePanel() {
-		timer = new Timer(1000 / 60, this);
+		// timer = new Timer(1000 / 60, this);
 	}
 
 	void startGame() {
-		timer.start();
+		// timer.start();
 	}
 
 	void updateMenuState() {
+		if (cardInDeck >= 54 * 4 - 1) {
+			cardDealer.deck.clear();
+			cardDealer.populate();
+			cardDealer.shuffle();
 
+		}
+		objectManager.update();
 	}
 
 	void updateGameState() {
@@ -81,6 +90,12 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		if (e.getKeyCode() == e.VK_ENTER) {
 			if (currentState == MENU_STATE) {
 				currentState = GAME_STATE;
+			}
+			repaint();
+			if (currentState == MENU_STATE) {
+				updateMenuState();
+			} else if (currentState == GAME_STATE) {
+				updateGameState();
 			}
 		}
 	}

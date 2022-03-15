@@ -4,13 +4,15 @@ import java.awt.Graphics;
 
 public class ObjectManager {
 	Player player;
-	Dealer dealer = new Dealer();
+	Dealer dealer;;
 
-	ObjectManager(Player player) {
+	ObjectManager(Player player, Dealer dealer) {
 		this.player = player;
+		this.dealer = dealer;
 	}
 
 	void update() {
+
 		player.update();
 		dealer.update();
 	}

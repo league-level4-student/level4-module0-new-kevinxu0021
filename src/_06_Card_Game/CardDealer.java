@@ -1,14 +1,14 @@
 package _06_Card_Game;
 
-import java.util.ArrayDeque;
+
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
-import java.util.Queue;
 
 public class CardDealer {
 
-	Queue<Card> deck = new ArrayDeque<Card>();
+	ArrayList<Card> deck = new ArrayList<Card>();
 
 	public void populate() {
 		for (int s = 0; s < 4; s++) {
