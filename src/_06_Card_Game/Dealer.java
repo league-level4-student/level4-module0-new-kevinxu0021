@@ -5,17 +5,20 @@ import java.awt.Graphics;
 import java.util.ArrayList;
 
 public class Dealer extends GameObject {
+	// GamePanel panel = new GamePanel();
 	Dealer(ArrayList<Card> card) {
-		super(card);
+
 		// TODO Auto-generated constructor stub
 	}
+
+	ArrayList<Card> currentCards = new ArrayList<Card>();
 
 	public void update() {
 
 	}
 
 	public void draw(Graphics g) {
-g.setColor(Color.BLACK);
-g.fillRect(100, 100, 75, 100);
+		g.setColor(Color.BLACK);
+		g.fillRect(100, 100, 75, 100);
 	}
 }

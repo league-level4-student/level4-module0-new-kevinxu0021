@@ -6,16 +6,14 @@ import java.util.ArrayList;
 
 public class Player extends GameObject {
 	Player(ArrayList<Card> card) {
-		super(card);
+
 		// TODO Auto-generated constructor stub
 	}
 
-	CardDealer cardDealer = new CardDealer();
+	ArrayList<Card> currentCards = new ArrayList<Card>();
 
 	public void update() {
-		if (cardDealer.deck.isEmpty() == false) {
-			cardDealer.deck.get(1);
-		}
+
 	}
 
 	public void draw(Graphics g) {

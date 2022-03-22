@@ -1,10 +1,8 @@
 package _06_Card_Game;
 
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
 
 public class CardDealer {
 
