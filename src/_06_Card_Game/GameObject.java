@@ -6,10 +6,11 @@ import java.util.ArrayList;
 public class GameObject {
 
 	ArrayList<Card> deck = new ArrayList<Card>();
-	GamePanel panel = new GamePanel();
+	ArrayList<Card> playerDeck = new ArrayList<Card>();
+	ArrayList<Card> dealerDeck = new ArrayList<Card>();
+//	GamePanel panel = new GamePanel();
 	CardDealer cardDealer = new CardDealer();
-	Dealer dealer;
-	Player player;
+
 	int state = 0;
 	int cardInDeck = 0;
 
@@ -18,21 +19,13 @@ public class GameObject {
 			cardDealer.shuffle();
 			deck.addAll(cardDealer.deck);
 		}
-		dealer = new Dealer(deck);
-		player = new Player(deck);
+
 	}
 
 	public void update() {
 		if (state == 0) {
 			if (cardInDeck >= 4) {
-				dealer.currentCards.add(deck.get(cardInDeck));
-				cardInDeck++;
-				player.currentCards.add(deck.get(cardInDeck));
-				cardInDeck++;
-				dealer.currentCards.add(deck.get(cardInDeck));
-				cardInDeck++;
-				player.currentCards.add(deck.get(cardInDeck));
-				cardInDeck++;
+
 			} else {
 				deck.clear();
 				for (int i = cardInDeck; i <= 54 * 4 - 1; i++) {
@@ -49,7 +42,6 @@ public class GameObject {
 	}
 
 	public void draw(Graphics g) {
-		player.draw(g);
-		dealer.draw(g);
+
 	}
 }
