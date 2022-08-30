@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class Dealer extends GameObject {
 	// GamePanel panel = new GamePanel();
 	CardDealer cardDealer = new CardDealer();
+
 	Dealer(ArrayList<Card> card) {
 
 		// TODO Auto-generated constructor stub
@@ -15,7 +16,8 @@ public class Dealer extends GameObject {
 	ArrayList<Card> currentCards = new ArrayList<Card>();
 
 	public void update() {
-currentCards = cardDealer.deck;
+		currentCards = cardDealer.deck;
+		
 	}
 
 	public void draw(Graphics g) {
