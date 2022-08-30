@@ -28,7 +28,9 @@ public class Player extends GameObject implements ActionListener, KeyListener{
 	@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
-		
+		if(e.getKeyCode() == 32) {
+			
+		}
 	}
 
 	@Override
