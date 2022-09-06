@@ -19,6 +19,10 @@ public class Player extends GameObject implements ActionListener, KeyListener{
 	public void update() {
 
 	}
+	
+	public void pullCard() {
+		
+	}
 
 	public void draw(Graphics g) {
 		g.setColor(Color.WHITE);
