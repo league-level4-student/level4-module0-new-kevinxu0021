@@ -7,7 +7,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
-public class GameObject implements KeyListener, ActionListener{
+public class GameObject implements KeyListener, ActionListener {
 
 	ArrayList<Card> deck = new ArrayList<Card>();
 	ArrayList<Card> playerDeck = new ArrayList<Card>();
@@ -42,6 +42,8 @@ public class GameObject implements KeyListener, ActionListener{
 			}
 		} else if (state == 1) {
 
+		} else {
+
 		}
 	}
 
@@ -52,24 +54,24 @@ public class GameObject implements KeyListener, ActionListener{
 	@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 }
