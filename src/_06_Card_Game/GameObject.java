@@ -27,6 +27,7 @@ public class GameObject implements KeyListener, ActionListener {
 	}
 
 	public void update() {
+		System.out.println("update" + state);
 		if (state == 0) {
 			if (cardInDeck >= 4) {
 
@@ -40,8 +41,16 @@ public class GameObject implements KeyListener, ActionListener {
 					deck.addAll(cardDealer.deck);
 				}
 			}
+			for(int i = 0; i < deck.size();i++) {
+				System.out.println(deck.get(i));
+			}
+			state = 1;
 		} else if (state == 1) {
-
+			for (int i = 0; i < 2; i++) {
+				dealerDeck.add(deck.get(0));
+				dealerDeck.remove(0);
+			}
+			System.out.println(dealerDeck.get(1));
 		} else {
 
 		}

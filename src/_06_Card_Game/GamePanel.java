@@ -23,6 +23,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	Player player = new Player(cardDealer.deck);
 	Dealer dealer = new Dealer(cardDealer.deck);
 	ObjectManager objectManager = new ObjectManager(player, dealer);
+	GameObject gameObject = new GameObject();
 
 	GamePanel() {
 		// timer = new Timer(1000 / 60, this);
@@ -43,7 +44,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	}
 
 	void updateGameState() {
-
+gameObject.update();
 	}
 
 	void drawMenuState(Graphics g) {
