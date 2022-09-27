@@ -34,6 +34,7 @@ public class GameObject implements KeyListener, ActionListener {
 			} else {
 				deck.clear();
 				for (int i = cardInDeck; i <= 54 * 4 - 1; i++) {
+					System.out.println(cardDealer.deck.get(i));
 					deck.add(cardDealer.deck.get(i));
 				}
 				for (int i = 0; i < 4; i++) {
@@ -41,7 +42,7 @@ public class GameObject implements KeyListener, ActionListener {
 					deck.addAll(cardDealer.deck);
 				}
 			}
-			for(int i = 0; i < deck.size();i++) {
+			for (int i = 0; i < deck.size(); i++) {
 				System.out.println(deck.get(i));
 			}
 			state = 1;
