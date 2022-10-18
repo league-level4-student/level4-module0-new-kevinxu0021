@@ -19,10 +19,12 @@ public class GameObject implements KeyListener, ActionListener {
 	int cardInDeck = 0;
 
 	GameObject() {
+		cardDealer.populate();
 		for (int i = 0; i < 4; i++) {
 			cardDealer.shuffle();
 			deck.addAll(cardDealer.deck);
 		}
+		System.out.println("b" + deck.size());
 
 	}
 
@@ -32,15 +34,7 @@ public class GameObject implements KeyListener, ActionListener {
 			if (cardInDeck >= 4) {
 
 			} else {
-				deck.clear();
-				for (int i = cardInDeck; i <= 54 * 4 - 1; i++) {
-					System.out.println(cardDealer.deck.get(i));
-					deck.add(cardDealer.deck.get(i));
-				}
-				for (int i = 0; i < 4; i++) {
-					cardDealer.shuffle();
-					deck.addAll(cardDealer.deck);
-				}
+
 			}
 			for (int i = 0; i < deck.size(); i++) {
 				System.out.println(deck.get(i));
