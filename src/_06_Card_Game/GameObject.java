@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class GameObject implements KeyListener, ActionListener {
 
@@ -15,8 +16,8 @@ public class GameObject implements KeyListener, ActionListener {
 //	GamePanel panel = new GamePanel();
 	CardDealer cardDealer = new CardDealer();
 
-	int state = 0;
-	int cardInDeck = 0;
+	int state = 1;
+	int cardInDeck = 208;
 
 	GameObject() {
 		cardDealer.populate();
@@ -30,22 +31,19 @@ public class GameObject implements KeyListener, ActionListener {
 
 	public void update() {
 		System.out.println("update" + state);
-		if (state == 0) {
-			if (cardInDeck >= 4) {
-
-			} else {
-
-			}
-			for (int i = 0; i < deck.size(); i++) {
-				System.out.println(deck.get(i));
-			}
-			state = 1;
-		} else if (state == 1) {
+		if (cardInDeck == 0) {
+			cardDealer.shuffle();
+			deck.clear();
+			deck.addAll(cardDealer.deck);
+		}
+		if (state == 1) {
 			for (int i = 0; i < 2; i++) {
-				dealerDeck.add(deck.get(0));
-				dealerDeck.remove(0);
+				dealerDeck.add(deck.get(cardInDeck - 1));
+				cardInDeck -= 1;
+				playerDeck.add(deck.get(cardInDeck - 1));
+				cardInDeck -= 1;
 			}
-			System.out.println(dealerDeck.get(1));
+
 		} else {
 
 		}
