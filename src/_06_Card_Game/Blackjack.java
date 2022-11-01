@@ -33,9 +33,9 @@ public class Blackjack {
 		frame.setResizable(false);
 		frame.pack();
 		panel.startGame();
-		panel.add(button);
-		panel.setLayout(null);
+		// panel.add(button);
+		// panel.setLayout(null);
 		// button.setVisible(false);
-		button.setLocation(1100, 600);
+		// button.setLocation(1100, 600);
 	}
 }

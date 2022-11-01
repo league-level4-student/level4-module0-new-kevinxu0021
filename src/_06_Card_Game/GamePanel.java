@@ -10,6 +10,7 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
@@ -24,6 +25,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	Dealer dealer = new Dealer(cardDealer.deck);
 	ObjectManager objectManager = new ObjectManager(player, dealer);
 	GameObject gameObject = new GameObject();
+	JButton button = new JButton();
 
 	GamePanel() {
 		// timer = new Timer(1000 / 60, this);
@@ -91,6 +93,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		if (e.getKeyCode() == e.VK_ENTER) {
 			if (currentState == MENU_STATE) {
 				currentState = GAME_STATE;
+
 			}
 			repaint();
 			if (currentState == MENU_STATE) {
