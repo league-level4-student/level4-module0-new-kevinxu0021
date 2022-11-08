@@ -102,6 +102,20 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 				updateGameState();
 			}
 		}
+
+		if (gameObject.state == 2) {
+			if (e.getKeyCode() == e.VK_ENTER) {
+				gameObject.playerDeck.add(gameObject.deck.get(gameObject.cardInDeck - 1));
+				gameObject.cardInDeck -= 1;
+				System.out.println(gameObject.playerDeck);
+			} else if (e.getKeyCode() == e.VK_SPACE) {
+				gameObject.state = 3;
+			} else if (e.getKeyCode() == e.VK_D) {
+				gameObject.playerDeck.add(gameObject.deck.get(gameObject.cardInDeck - 1));
+				gameObject.cardInDeck -= 1;
+				gameObject.state = 4;
+			}
+		}
 	}
 
 	@Override

@@ -13,7 +13,6 @@ public class GameObject implements KeyListener, ActionListener {
 	ArrayList<Card> deck = new ArrayList<Card>();
 	ArrayList<Card> playerDeck = new ArrayList<Card>();
 	ArrayList<Card> dealerDeck = new ArrayList<Card>();
-//	GamePanel panel = new GamePanel();
 	CardDealer cardDealer = new CardDealer();
 
 	int state = 1;
@@ -25,17 +24,17 @@ public class GameObject implements KeyListener, ActionListener {
 			cardDealer.shuffle();
 			deck.addAll(cardDealer.deck);
 		}
-		System.out.println("b" + deck.size());
 
 	}
 
 	public void update() {
-		System.out.println("update" + state);
+		// add cards when deck runs out
 		if (cardInDeck == 0) {
 			cardDealer.shuffle();
 			deck.clear();
 			deck.addAll(cardDealer.deck);
 		}
+		// add 2 cards to player and dealer
 		if (state == 1) {
 			for (int i = 0; i < 2; i++) {
 				dealerDeck.add(deck.get(cardInDeck - 1));
@@ -43,9 +42,7 @@ public class GameObject implements KeyListener, ActionListener {
 				playerDeck.add(deck.get(cardInDeck - 1));
 				cardInDeck -= 1;
 			}
-
-		} else {
-
+			state = 2;
 		}
 	}
 
