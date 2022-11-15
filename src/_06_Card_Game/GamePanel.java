@@ -90,19 +90,6 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
-		if (e.getKeyCode() == e.VK_ENTER) {
-			if (currentState == MENU_STATE) {
-				currentState = GAME_STATE;
-
-			}
-			repaint();
-			if (currentState == MENU_STATE) {
-				updateMenuState();
-			} else if (currentState == GAME_STATE) {
-				updateGameState();
-			}
-		}
-
 		if (gameObject.state == 2) {
 			if (e.getKeyCode() == e.VK_ENTER) {
 				gameObject.playerDeck.add(gameObject.deck.get(gameObject.cardInDeck - 1));
@@ -116,6 +103,21 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 				gameObject.state = 4;
 			}
 		}
+		
+		if (e.getKeyCode() == e.VK_ENTER) {
+			if (currentState == MENU_STATE) {
+				currentState = GAME_STATE;
+
+			}
+			repaint();
+			if (currentState == MENU_STATE) {
+				updateMenuState();
+			} else if (currentState == GAME_STATE) {
+				updateGameState();
+			}
+		}
+
+		
 	}
 
 	@Override
