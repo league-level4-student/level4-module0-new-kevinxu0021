@@ -103,7 +103,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 				gameObject.state = 4;
 			}
 		}
-		
+
 		if (e.getKeyCode() == e.VK_ENTER) {
 			if (currentState == MENU_STATE) {
 				currentState = GAME_STATE;
@@ -117,7 +117,6 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 			}
 		}
 
-		
 	}
 
 	@Override

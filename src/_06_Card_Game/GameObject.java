@@ -44,6 +44,14 @@ public class GameObject implements KeyListener, ActionListener {
 			}
 			state = 2;
 		}
+
+		if (state == 3 || state == 4) {
+			dealer();
+		}
+	}
+
+	public void dealer() {
+		System.out.println(dealerDeck.get(0));
 	}
 
 	public void draw(Graphics g) {

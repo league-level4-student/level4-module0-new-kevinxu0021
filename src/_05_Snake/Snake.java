@@ -69,7 +69,7 @@ public class Snake {
 		 * the snake (index 0) or you will go out of bounds.
 		 */
 		for (int i = snake.size() - 1; i > 0; i--) {
-			snake.get(i).setLocation(snake.get(i-1).getLocation());
+			snake.get(i).setLocation(snake.get(i - 1).getLocation());
 		}
 
 		/*
@@ -147,7 +147,7 @@ public class Snake {
 		 * Complete the method so it returns true if the head of the snake is outside of
 		 * the window and false otherwise.
 		 */
-		if (head.getLocation().getX() > (SnakeGame.WIDTH-1) || head.getLocation().getX() < 0) {
+		if (head.getLocation().getX() > (SnakeGame.WIDTH - 1) || head.getLocation().getX() < 0) {
 			return true;
 
 		} else if (head.getLocation().getY() > SnakeGame.HEIGHT || head.getLocation().getY() < 0) {

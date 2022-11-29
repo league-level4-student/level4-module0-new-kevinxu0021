@@ -17,7 +17,7 @@ public class Dealer extends GameObject {
 
 	public void update() {
 		currentCards = cardDealer.deck;
-		
+
 	}
 
 	public void draw(Graphics g) {
