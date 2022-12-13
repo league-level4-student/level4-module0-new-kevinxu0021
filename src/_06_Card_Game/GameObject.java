@@ -51,7 +51,9 @@ public class GameObject implements KeyListener, ActionListener {
 	}
 
 	public void dealer() {
-		System.out.println(dealerDeck.get(0));
+		System.out.println("run" + dealerDeck.get(0));
+		System.out.println("run" + dealerDeck.get(1));
+
 	}
 
 	public void draw(Graphics g) {
