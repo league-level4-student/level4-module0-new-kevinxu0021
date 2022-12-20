@@ -16,7 +16,7 @@ public class GameObject implements KeyListener, ActionListener {
 	CardDealer cardDealer = new CardDealer();
 
 	int state = 1;
-	int cardInDeck = 208;
+	int cardInDeck;
 
 	GameObject() {
 		cardDealer.populate();
@@ -24,7 +24,7 @@ public class GameObject implements KeyListener, ActionListener {
 			cardDealer.shuffle();
 			deck.addAll(cardDealer.deck);
 		}
-
+		cardInDeck = deck.size();
 	}
 
 	public void update() {
@@ -51,8 +51,16 @@ public class GameObject implements KeyListener, ActionListener {
 	}
 
 	public void dealer() {
-		System.out.println("run" + dealerDeck.get(0));
-		System.out.println("run" + dealerDeck.get(1));
+		int total = 0;
+		for (int i = 0; i < dealerDeck.size(); i++) {
+			total = total + dealerDeck.get(i).getRank().getValue();
+			System.out.println(dealerDeck.get(i).getRank().getValue() + "" + dealerDeck.get(i));
+		}
+		if (total < 17) {
+			dealerDeck.add(deck.get(cardInDeck - 1));
+			cardInDeck -= 1;
+			update();
+		}
 
 	}
 
