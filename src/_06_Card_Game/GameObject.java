@@ -19,6 +19,7 @@ public class GameObject implements KeyListener, ActionListener {
 	int cardInDeck;
 	int total = 0;
 	int points = 1;
+	int playerTotal = 0;
 
 	GameObject() {
 		cardDealer.populate();
@@ -46,7 +47,16 @@ public class GameObject implements KeyListener, ActionListener {
 			}
 			state = 2;
 		}
+		for (int i = 0; i < playerDeck.size(); i++) {
+			playerTotal += playerDeck.get(i).getRank().getValue();
+		}
+		if (state == 2) {
+			if (playerTotal == 21) {
 
+			} else if (playerTotal > 21) {
+
+			}
+		}
 		if (state == 3 || state == 4) {
 
 			for (int i = 0; i < dealerDeck.size(); i++) {
@@ -67,6 +77,8 @@ public class GameObject implements KeyListener, ActionListener {
 		}
 		if (total > 21) {
 			points *= 2;
+		}else {
+			if(total)
 		}
 	}
 
