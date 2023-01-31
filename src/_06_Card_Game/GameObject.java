@@ -21,6 +21,10 @@ public class GameObject implements KeyListener, ActionListener {
 	int points = 1;
 	int playerTotal = 0;
 
+	/*
+	 * states 1 = adding cards 2 = playing state 3 = stay 4 = double down
+	 */
+
 	GameObject() {
 		cardDealer.populate();
 		for (int i = 0; i < 4; i++) {
@@ -47,14 +51,16 @@ public class GameObject implements KeyListener, ActionListener {
 			}
 			state = 2;
 		}
+
 		for (int i = 0; i < playerDeck.size(); i++) {
 			playerTotal += playerDeck.get(i).getRank().getValue();
 		}
+
 		if (state == 2) {
 			if (playerTotal == 21) {
-
+				System.out.println("Blackjack");
 			} else if (playerTotal > 21) {
-
+				System.out.println("Bust");
 			}
 		}
 		if (state == 3 || state == 4) {
@@ -74,11 +80,8 @@ public class GameObject implements KeyListener, ActionListener {
 			cardInDeck -= 1;
 			total += dealerDeck.get(dealerDeck.size() - 1).getRank().getValue();
 			update();
-		}
-		if (total > 21) {
+		} else if (total > 21) {
 			points *= 2;
-		}else {
-			if(total)
 		}
 	}
 
