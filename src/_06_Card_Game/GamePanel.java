@@ -9,7 +9,10 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.Timer;
@@ -27,8 +30,17 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	GameObject gameObject = new GameObject();
 	JButton button = new JButton();
 
+	public static BufferedImage card[];
+
 	GamePanel() {
 		// timer = new Timer(1000 / 60, this);
+		try {
+			for (int i = 0; i < 53; i++) {
+				card[i] = ImageIO.read(this.getClass().getResourceAsStream("card_" + i + 1 + ".png"));
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	void startGame() {
@@ -94,7 +106,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 			if (e.getKeyCode() == e.VK_ENTER) {
 				gameObject.playerDeck.add(gameObject.deck.get(gameObject.cardInDeck - 1));
 				gameObject.cardInDeck -= 1;
-				
+
 				System.out.println(gameObject.playerDeck);
 			} else if (e.getKeyCode() == e.VK_SPACE) {
 				gameObject.state = 3;
