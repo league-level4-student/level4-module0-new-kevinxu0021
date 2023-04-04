@@ -86,7 +86,9 @@ public class GameObject implements KeyListener, ActionListener {
 	}
 
 	public void draw(Graphics g) {
+		if (playerDeck.get(1).getSuit().equals("Spades")) {
 
+		}
 	}
 
 	@Override
