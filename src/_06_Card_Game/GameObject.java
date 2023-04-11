@@ -20,6 +20,8 @@ public class GameObject implements KeyListener, ActionListener {
 	int total = 0;
 	int points = 1;
 	int playerTotal = 0;
+	int suit = 1;
+	int cardIndex = 01;
 
 	/*
 	 * states 1 = adding cards 2 = playing state 3 = stay 4 = double down
@@ -86,7 +88,18 @@ public class GameObject implements KeyListener, ActionListener {
 	}
 
 	public void draw(Graphics g) {
+
 		if (playerDeck.get(1).getSuit().equals("Spades")) {
+			suit = 4;
+		} else if (playerDeck.get(1).getSuit().equals("Clubs")) {
+			suit = 1;
+		} else if (playerDeck.get(1).getSuit().equals("Hearts")) {
+			suit = 3;
+		} else {
+			suit = 2;
+		}
+		switch (playerDeck.get(1).getRank()) {
+		case Ten:
 
 		}
 	}
