@@ -99,9 +99,33 @@ public class GameObject implements KeyListener, ActionListener {
 			suit = 2;
 		}
 		switch (playerDeck.get(1).getRank()) {
+		case Queen:
+			
+		case Jack:
+		
 		case Ten:
 
+		case Nine:
+		
+		case Eight:
+			
+		case Seven:
+			
+		case Six:
+			
+		case Five:
+			
+		case Four:
+			
+		case Three:
+			
+		case Two:
+			
+		case Ace:
+			
 		}
+		
+			
 	}
 
 	@Override
