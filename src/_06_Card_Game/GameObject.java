@@ -100,32 +100,31 @@ public class GameObject implements KeyListener, ActionListener {
 		}
 		switch (playerDeck.get(1).getRank()) {
 		case Queen:
-			
+			g.drawImage(GamePanel.card[12 * suit], 0, 0, 50, 50, null);
 		case Jack:
-		
+
 		case Ten:
 
 		case Nine:
-		
+
 		case Eight:
-			
+
 		case Seven:
-			
+
 		case Six:
-			
+
 		case Five:
-			
+
 		case Four:
-			
+
 		case Three:
-			
+
 		case Two:
-			
+
 		case Ace:
-			
+
 		}
-		
-			
+
 	}
 
 	@Override
