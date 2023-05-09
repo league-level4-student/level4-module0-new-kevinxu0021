@@ -102,27 +102,29 @@ public class GameObject implements KeyListener, ActionListener {
 		case Queen:
 			g.drawImage(GamePanel.card[12 * suit], 0, 0, 50, 50, null);
 		case Jack:
-
+			g.drawImage(GamePanel.card[11 * suit], 0, 0, 50, 50, null);
 		case Ten:
-
+			g.drawImage(GamePanel.card[10 * suit], 0, 0, 50, 50, null);
 		case Nine:
-
+			g.drawImage(GamePanel.card[9 * suit], 0, 0, 50, 50, null);
 		case Eight:
-
+			g.drawImage(GamePanel.card[8 * suit], 0, 0, 50, 50, null);
 		case Seven:
-
+			g.drawImage(GamePanel.card[7 * suit], 0, 0, 50, 50, null);
 		case Six:
-
+			g.drawImage(GamePanel.card[6 * suit], 0, 0, 50, 50, null);
 		case Five:
-
+			g.drawImage(GamePanel.card[5 * suit], 0, 0, 50, 50, null);
 		case Four:
-
+			g.drawImage(GamePanel.card[4 * suit], 0, 0, 50, 50, null);
 		case Three:
-
+			g.drawImage(GamePanel.card[3 * suit], 0, 0, 50, 50, null);
 		case Two:
-
+			g.drawImage(GamePanel.card[2 * suit], 0, 0, 50, 50, null);
 		case Ace:
-
+			g.drawImage(GamePanel.card[1 * suit], 0, 0, 50, 50, null);
+		default:
+			break;
 		}
 
 	}
