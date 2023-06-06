@@ -16,6 +16,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+import java.util.*;
 
 public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	Timer timer;
@@ -30,13 +31,22 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	GameObject gameObject = new GameObject();
 	JButton button = new JButton();
 
-	public static BufferedImage card[];
-
+	//public static BufferedImage card[] = ;
+	public static List<BufferedImage> card = new ArrayList<>();
+	
 	GamePanel() {
 		// timer = new Timer(1000 / 60, this);
 		try {
-			for (int i = 0; i < 53; i++) {
-				card[i] = ImageIO.read(this.getClass().getResourceAsStream("card_" + i + 1 + ".png"));
+			for (int i = 1; i < 53; i++) {
+				//card.add(ImageIO.read(this.getClass().getResourceAsStream("card_" + i + 1 + ".png")));
+				if (i < 10) {
+					System.out.println("Input card file is " + "card_0" + i + ".png");
+					card.add(ImageIO.read(this.getClass().getResourceAsStream("card_0" + i + ".png")));
+				} else {
+					System.out.println("Input card file is " + "card_" + i + ".png");
+					card.add(ImageIO.read(this.getClass().getResourceAsStream("card_" + i + ".png")));
+				}
+					
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
